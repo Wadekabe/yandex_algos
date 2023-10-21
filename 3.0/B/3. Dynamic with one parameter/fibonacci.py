@@ -5,9 +5,9 @@ def fib_rec(n):
 
 
 def fib_cycle(n):
-    for i in range(2, n+1):
+    for i in range(2, n):
         dp[i] = dp[i-1] + dp[i-2]
-    return dp[i]
+    return dp[n-1]
 
 
 n = int(input())
@@ -17,7 +17,7 @@ if prog_type == "rec":
     dp[0] = dp[1] = 1
     print(fib_rec(n))
 elif prog_type == "cycle":
-    dp = [0] * (n + 1)
+    dp = [0] * n
     dp[0] = dp[1] = 1
     print(fib_cycle(n))
 else:
